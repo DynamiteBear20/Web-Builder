@@ -11,40 +11,33 @@ import * as Blockly from 'blockly/core';
 // This is just an example and you should replace this with your
 // own custom blocks.
 export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([{
-  "type": "object",
-  "message0": "{ %1 %2 }",
+  "type": "head",
+  "message0": "<head>%1 %2</head>",
   "args0": [
     {
       "type": "input_dummy"
     },
     {
       "type": "input_statement",
-      "name": "MEMBERS"
+      "name": "CONTENT"
     }
   ],
-  "output": null,
   "colour": 230,
-},
-{
-  "type": "member",
-  "message0": "%1 %2 %3",
+  "previousStatement":null,
+  "nextStatement":null,
+},{
+"type": "body",
+  "message0": "<body>%1 %2</body>",
   "args0": [
     {
-      "type": "field_input",
-      "name": "MEMBER_NAME",
-      "text": ""
+      "type": "input_dummy"
     },
     {
-      "type": "field_label",
-      "name": "COLON",
-      "text": ":"
-    },
-    {
-      "type": "input_value",
-      "name": "MEMBER_VALUE"
+      "type": "input_statement",
+      "name": "CONTENT"
     }
   ],
-  "previousStatement": null,
-  "nextStatement": null,
   "colour": 230,
+  "previousStatement":null,
+  "nextStatement":null,
 }]);

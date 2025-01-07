@@ -1,13 +1,23 @@
 import * as Blockly from 'blockly';
 
-export const jsonGenerator = new Blockly.Generator('JSON');
+export const htmlGenerator = new Blockly.Generator('HTML');
 const Order = {
     ATOMIC: 0,
   };
-jsonGenerator.forBlock['logic_null'] = function(block) {
+
+htmlGenerator.forBlock['head'] = function(block, generator) {
+  const code = generator.statementToCode(block,'CONTENT');
+  const headCode = '<head>\n'+code+'\n</head>\n';
+  return [headCode,Order.ATOMIC];
+};
+htmlGenerator.forBlock['body'] = function(block, generator) {
+  const bodyCode = `<body>\n${generator.statementToCode(block,'CONTENT')}\n</body>\n`;
+  return [bodyCode,Order.ATOMIC];
+};
+htmlGenerator.forBlock['logic_null'] = function(block) {
     return ['null', Order.ATOMIC];
 };
-jsonGenerator.forBlock['text'] = function(block) {
+/*jsonGenerator.forBlock['text'] = function(block) {
     const textValue = block.getFieldValue('TEXT');
     const code = `"${textValue}"`;
     return [code, Order.ATOMIC];
@@ -47,12 +57,12 @@ jsonGenerator.forBlock['member'] = function(block, generator) {
         generator.statementToCode(block, 'MEMBERS');
     const code = '{\n' + statementMembers + '\n}';
     return [code, Order.ATOMIC];
-  };
-  jsonGenerator.scrub_ = function(block, code, thisOnly) {
+  };*/
+  htmlGenerator.scrub_ = function(block, code, thisOnly) {
     const nextBlock =
         block.nextConnection && block.nextConnection.targetBlock();
     if (nextBlock && !thisOnly) {
-      return code + ',\n' + jsonGenerator.blockToCode(nextBlock);
+      return code + ',\n' + htmlGenerator.blockToCode(nextBlock);
     }
     return code;
   };

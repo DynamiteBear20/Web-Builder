@@ -6,7 +6,7 @@
 
 import * as Blockly from 'blockly';
 import {blocks} from './blocks/text';
-import {jsonGenerator} from './generators/json';
+import {htmlGenerator} from './generators/json';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
@@ -24,7 +24,7 @@ const ws = Blockly.inject(blocklyDiv, {toolbox});
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
-  const code = jsonGenerator.workspaceToCode(ws);
+  const code = htmlGenerator.workspaceToCode(ws);
   codeDiv.innerText = code;
 
   outputDiv.innerHTML = '';
@@ -33,8 +33,8 @@ const runCode = () => {
 };
 
 // Load the initial state from storage and run the code.
-load(ws);
-runCode();
+//load(ws);
+//runCode();
 
 // Every time the workspace changes state, save the changes to storage.
 ws.addChangeListener((e) => {
