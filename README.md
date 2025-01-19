@@ -12,9 +12,7 @@ Web Builder is a tool designed to help developers create and manage websites eff
 
 ## Features
 
-- **Template Management:** Easily manage and switch between different web templates.
-- **Live Preview:** Instant preview of your changes.(Coming)
-- **Responsive Design:** Built-in support for responsive design.(Coming soon)
+- **Template Management:** Easily manage and switch between different web templates. (Coming soon)
 - **Plugin Support:** Extend functionality with plugins. (Also,Coming soon!)
 
 ## Installation
@@ -24,20 +22,15 @@ To get started with Web Builder, follow these steps:
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/web-builder.git
+   git clone https://github.com/DynamiteBear20/web-builder.git
    ```
-2. Install [Node.js](https://nodejs.org/en/download) and npm.
-**Note:This is temporary! We are going to make numerous changes!**
+   Or download this file as a zip from [https://github.com/DynamiteBear20/WebBuilder.Library](https://github.com/DynamiteBear20/WebBuilder.Library)
+2. Shift the folder to the ```Lib/site-packages``` folder of your Python folder.
+
+**Installer coming soon**
 
 ## Usage
 
-To use the 'App', follow the following instructions.
-1. cd to the root directory.
-2. And run:
-   ```sh
-   npm start
-   ```
-**OR**
 To use the 'Library', follow the following instructions.
 1. Import Builder.py
 2. Start creating!
@@ -48,3 +41,6 @@ See [here](test.py)
 ## Contributing
 
 - Blockly: Blockly is an open-source developer library from Google. It creates a visual programming interface that uses drag-and-drop blocks. See [here](https://g.co/dev/blockly)
+
+## License
+MIT License
